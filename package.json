@@ -2,13 +2,16 @@
   "name": "hw",
   "version": "0.1.0",
   "private": true,
+  "author": "Tushar Mudgal",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node server.js"
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.11",
+    "express": "^4.16.3",
     "vue": "^2.5.16",
     "vue-awesome": "^2.3.8",
     "vue-loaders": "^2.0.0",
