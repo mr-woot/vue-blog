@@ -3,7 +3,7 @@
     <div v-show="!loader" class="post">
       <h2>{{posts[$route.params.id - 1].title}}</h2>
       <div class="img-wrapper">
-          <b-img class="c-img" blank-color="#bbb" v-bind:src="posts[$route.params.id - 1].link" fluid alt="Image" />
+        <b-img class="c-img" blank-color="#bbb" v-bind:src="posts[$route.params.id - 1].link" fluid alt="Image" />
       </div>
       <h5>{{posts[$route.params.id - 1].subTitle}}</h5>
       <p v-for="(p, index) in posts[$route.params.id - 1].text" :key="index">{{p}}</p>
@@ -13,7 +13,7 @@
         </div>
       </div>
       <b-button :pressed="clicked" v-if="posts[$route.params.id - 1].comments.length > 0" size="" variant="success" v-on:click="loadComments">
-        <icon v-show="clicked" name="spinner" spin /> {{clicked ? "Loading Comments" : "Show Comments"}}
+        <icon v-show="clicked" name="spinner" spin /> {{ buttonText }}
       </b-button>
       <div v-else>
         No Comments
@@ -89,7 +89,8 @@ export default {
       clicked: false,
       comments: [],
       showComments: false,
-      commentIndex: 0
+      commentIndex: 0,
+      buttonText: "Load Comments"
     };
   },
   methods: {
@@ -106,14 +107,22 @@ export default {
             self.commentIndex + 3
           )
         ];
+        self.buttonText =
+          self.comments.length ===
+          self.posts[self.$route.params.id - 1].comments.length
+            ? "No More Comments"
+            : "Load More Comments";
         self.commentIndex += 3;
-      }, 500);
+      }, 1500);
     }
   },
   mounted() {
     const self = this;
     setTimeout(function() {
+      const isComments =
+        self.posts[self.$route.params.id - 1].comments.length > 0;
       self.loader = false;
+      self.buttonText = !isComments ? "No Comments" : "Load Comments";
     }, 1500);
   }
 };
@@ -125,13 +134,16 @@ export default {
   left: 50%;
   top: 50%;
 }
+
 .post {
   display: flex;
   flex-flow: column nowrap;
 }
+
 .post h2 {
   margin-bottom: 2.5rem;
 }
+
 .post h5 {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
