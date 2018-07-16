@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{'detailed-post': loader}">
     <div v-show="!loader" class="post">
       <h2>{{posts[$route.params.id - 1].title}}</h2>
       <div class="img-wrapper">
@@ -7,16 +7,17 @@
       </div>
       <h5>{{posts[$route.params.id - 1].subTitle}}</h5>
       <p v-for="(p, index) in posts[$route.params.id - 1].text" :key="index">{{p}}</p>
-      <div>
-        <div v-show="showComments" v-for="comment in comments" :key="comment.id">
-          {{comment}}
-        </div>
-      </div>
-      <b-button :pressed="clicked" v-if="posts[$route.params.id - 1].comments.length > 0" size="" variant="success" v-on:click="loadComments">
+      <b-button class="c-button" :disabled="disabledComments" :pressed="clicked" v-if="posts[$route.params.id - 1].comments.length > 0" size="" variant="success" v-on:click="loadComments">
         <icon v-show="clicked" name="spinner" spin /> {{ buttonText }}
       </b-button>
       <div v-else>
         No Comments
+      </div>
+      <div class="comments-wrapper" v-show="showComments">
+        <h4>Comments</h4>
+        <div v-for="comment in comments" :key="comment.id" class="comment-item">
+          <icon name="user-circle"/><div>{{comment}}</div>
+        </div>
       </div>
     </div>
     <ball-pulse-loader v-show="loader" color="#6AF788" class="loader"></ball-pulse-loader>
@@ -90,7 +91,8 @@ export default {
       comments: [],
       showComments: false,
       commentIndex: 0,
-      buttonText: "Load Comments"
+      buttonText: "Load Comments",
+      disabledComments: false
     };
   },
   methods: {
@@ -112,6 +114,7 @@ export default {
           self.posts[self.$route.params.id - 1].comments.length
             ? "No More Comments"
             : "Load More Comments";
+        self.disabledComments = self.buttonText === "No More Comments";
         self.commentIndex += 3;
       }, 1500);
     }
@@ -148,5 +151,41 @@ export default {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   color: #a1a1a1;
+}
+
+.comments-wrapper {
+  margin-top: 1rem;
+  background: #9d9d9d;
+  border-radius: 4px;
+  color: #fff;
+  padding: 1rem;
+}
+
+.comments-wrapper > div {
+  background: #eee;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  color: #1d1d1d;
+}
+
+.c-button {
+  margin: 1.5rem 0;
+}
+
+.comment-item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.comment-item > svg {
+  margin-right: 1rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .detailed-post {
+    height: calc(100vh - 112px - 56px - 4rem);
+  }
 }
 </style>

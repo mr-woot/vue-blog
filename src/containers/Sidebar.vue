@@ -22,5 +22,15 @@ export default {
 .top-right {
   flex-shrink: 0;
   display: inline-flex;
+  margin-bottom: 1.5rem;
+}
+#right {
+  /* overflow: hidden;
+  position: absolute; */
+}
+@media only screen and (max-width: 991px) {
+  #right {
+    margin-top: 2rem;
+  }
 }
 </style>

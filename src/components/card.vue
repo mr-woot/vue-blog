@@ -17,34 +17,37 @@
 </template>
 
 <script>
-    export default {
-        name: "post-card",
-        props: {
-            id: Number,
-            title: String,
-            text: String,
-            subTitle: String,
-            link: String,
-            comments: Array
-        }
-    };
+export default {
+  name: "post-card",
+  props: {
+    id: Number,
+    title: String,
+    text: String,
+    subTitle: String,
+    link: String,
+    comments: Array
+  }
+};
 </script>
 
 <style scoped>
-    .mb1rem {
-        margin-bottom: 1rem;
-    }
-    
-    .c-bcard {
-        min-height: 250px;
-        border-radius: 4px;
-        box-shadow: 0 2px 6px 0 rgba(34, 34, 34, 0.08), 0 0 0 0px rgba(0, 0, 0, 0.08);
-        cursor: pointer;
-    }
-    
-    .c-img {
-        /* object-fit: cover; */
-        width: 100%;
-        height: 100%;
-    }
+.mb1rem {
+  margin-bottom: 1rem;
+}
+
+.c-bcard {
+  min-height: 250px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px 0 rgba(34, 34, 34, 0.08), 0 0 0 0px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.c-img {
+  /* object-fit: cover; */
+  width: 100%;
+  height: 100%;
+}
+.card-group > .card {
+  margin-bottom: 0;
+}
 </style>
