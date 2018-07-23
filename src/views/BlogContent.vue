@@ -24,5 +24,6 @@ export default {
 }
 .top-left {
   margin-bottom: 1.5rem;
+  font-weight: 300;
 }
 </style>

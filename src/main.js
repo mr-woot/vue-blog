@@ -9,6 +9,11 @@ import 'vue-loaders/dist/vue-loaders.css';
 import * as VueLoaders from 'vue-loaders';
 import 'vue-awesome/icons/spinner';
 import 'vue-awesome/icons/user-circle';
+import 'vue-awesome/icons/facebook';
+import 'vue-awesome/icons/twitter';
+import 'vue-awesome/icons/instagram';
+import 'vue-awesome/icons/google-plus';
+import 'vue-awesome/icons/pinterest';
 import Icon from 'vue-awesome/components/Icon';
 import VeeValidate from 'vee-validate';
 

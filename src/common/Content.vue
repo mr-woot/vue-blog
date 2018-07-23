@@ -63,7 +63,6 @@ export default {
 <style scoped>
 .fw {
   width: 100%;
-  background: #f6fbfc;
   display: flex;
   flex-flow: column nowrap;
   flex: 1;
@@ -76,10 +75,8 @@ export default {
   flex: 1;
   /* bg styles */
   border-top: none;
-  background: #fff;
+  background: transparent;
   border-bottom: none;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  box-shadow: 0 2px 6px 0 rgba(34, 34, 34, 0.08), 0 0 0 0px rgba(0, 0, 0, 0.08);
 }
 @media only screen and (min-width: 992px) {
   .sidebar-col {

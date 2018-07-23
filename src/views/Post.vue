@@ -6,7 +6,9 @@
         <b-img class="c-img" blank-color="#bbb" v-bind:src="posts[$route.params.id - 1].link" fluid alt="Image" />
       </div>
       <h5>{{posts[$route.params.id - 1].subTitle}}</h5>
-      <p v-for="(p, index) in posts[$route.params.id - 1].text" :key="index">{{p}}</p>
+      <div class="ppost">
+        <p v-for="(p, index) in posts[$route.params.id - 1].text" :key="index">{{p}}</p>
+      </div>
       <b-button class="c-button" :disabled="disabledComments" :pressed="clicked" v-if="posts[$route.params.id - 1].comments.length > 0" size="" variant="success" v-on:click="loadComments">
         <icon v-show="clicked" name="spinner" spin /> {{ buttonText }}
       </b-button>
@@ -16,7 +18,8 @@
       <div class="comments-wrapper" v-show="showComments">
         <h4>Comments</h4>
         <div v-for="comment in comments" :key="comment.id" class="comment-item">
-          <icon name="user-circle"/><div>{{comment}}</div>
+          <icon name="user-circle" />
+          <div>{{comment}}</div>
         </div>
       </div>
     </div>
@@ -138,6 +141,14 @@ export default {
   top: 50%;
 }
 
+.ppost {
+  background-color: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+}
+
 .post {
   display: flex;
   flex-flow: column nowrap;
@@ -154,11 +165,13 @@ export default {
 }
 
 .comments-wrapper {
-  margin-top: 1rem;
-  background: #9d9d9d;
-  border-radius: 4px;
-  color: #fff;
-  padding: 1rem;
+  /* margin-top: 1rem; */
+  /* background: #9d9d9d; */
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
 }
 
 .comments-wrapper > div {
@@ -177,6 +190,10 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+}
+
+.comment-item:first-child {
+  margin-top: 1rem;
 }
 
 .comment-item > svg {

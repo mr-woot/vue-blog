@@ -23,6 +23,7 @@ export default {
   flex-shrink: 0;
   display: inline-flex;
   margin-bottom: 1.5rem;
+  font-weight: 300;
 }
 #right {
   /* overflow: hidden;

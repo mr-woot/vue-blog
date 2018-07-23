@@ -36,9 +36,13 @@ export default {
 }
 
 .c-bcard {
+  background-color: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  margin: 0 0 30px;
   min-height: 250px;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px 0 rgba(34, 34, 34, 0.08), 0 0 0 0px rgba(0, 0, 0, 0.08);
   cursor: pointer;
 }
 
@@ -49,5 +53,6 @@ export default {
 }
 .card-group > .card {
   margin-bottom: 0;
+  border: none;
 }
 </style>

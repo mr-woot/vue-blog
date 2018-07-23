@@ -27,8 +27,7 @@ export default {
         },
         {
           id: 2,
-          title:
-            "Xherdan Shaqiri move to Liverpool could trigger Andros Townsend, Matt Ritchie, Michail Antonio deals",
+          title: "Xherdan Shaqiri move to Liverpool could trigger deals",
           subTitle:
             "Stoke City remain in talks with Newcastle over the signing of Ritchie",
           link:

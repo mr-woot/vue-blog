@@ -64,12 +64,10 @@ export default {
   margin-top: 2rem;
 }
 .sub-form {
-  border-radius: 4px;
-  -webkit-box-shadow: 0 2px 6px 0 rgba(34, 34, 34, 0.08),
-    0 0 0 0px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 2px 6px 0 rgba(34, 34, 34, 0.08), 0 0 0 0px rgba(0, 0, 0, 0.08);
-  background: #fff;
+  background-color: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
   padding: 1.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 </style>
