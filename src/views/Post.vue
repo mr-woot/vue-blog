@@ -160,9 +160,10 @@ export default {
 }
 
 .post h5 {
-  margin-top: 1rem;
+  margin-top: 1rem !important;
   margin-bottom: 1.5rem !important;
   color: #a1a1a1;
+  font-size: 1.5rem;
 }
 
 .comments-wrapper {

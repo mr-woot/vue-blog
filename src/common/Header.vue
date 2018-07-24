@@ -55,11 +55,11 @@ header {
 header > div {
   height: 78px;
   font-size: 32px;
-  display: flex;
-  display: -webkit-flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  display: flex !important;
+  display: -webkit-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
 }
 
 .navbar {
@@ -103,8 +103,8 @@ header > div {
   float: right;
   position: relative;
   z-index: 999;
-  display: flex;
-  display: -webkit-flex;
+  display: flex !important;
+  display: -webkit-flex !important;
 }
 
 .navbar .social-icons a:first-of-type {
