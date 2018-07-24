@@ -3,9 +3,9 @@
     <div class="navbar group">
       <div class="container">
         <ul id="menu" class="main-menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Me</a></li>
-          <li><a href="#">Contact</a></li>
+          <li v-bind:style="{display: 'flex'}"><a href="#">Home</a></li>
+          <li v-bind:style="{display: 'flex'}"><a href="#">About Me</a></li>
+          <li v-bind:style="{display: 'flex'}"><a href="#">Contact</a></li>
         </ul>
         <!-- SOCIAL & SEARCH -->
         <div class="social-icons">
