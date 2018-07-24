@@ -18,6 +18,7 @@ import Icon from 'vue-awesome/components/Icon';
 import VeeValidate from 'vee-validate';
 
 Vue.use(VeeValidate);
+
 Vue.config.productionTip = false;
 Vue.component('icon', Icon)
 Vue.use(VueLoaders);
