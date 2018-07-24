@@ -156,6 +156,7 @@ export default {
 
 .post h2 {
   margin-bottom: 2.5rem;
+  font-size: 2rem;
 }
 
 .post h5 {
