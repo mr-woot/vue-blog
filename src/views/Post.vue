@@ -155,13 +155,13 @@ export default {
 }
 
 .post h2 {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem !important;
   font-size: 2rem;
 }
 
 .post h5 {
   margin-top: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem !important;
   color: #a1a1a1;
 }
 
