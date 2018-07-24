@@ -155,8 +155,8 @@ export default {
 }
 
 .ppost > p:not(:first) {
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .post h2 {
