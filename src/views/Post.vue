@@ -7,7 +7,7 @@
       </div>
       <h5>{{posts[$route.params.id - 1].subTitle}}</h5>
       <div class="ppost">
-        <p v-for="(p, index) in posts[$route.params.id - 1].text" :key="index">{{p}}</p>
+        <p v-for="(p, index) in posts[$route.params.id - 1].text" :key="index" v-bind:style="{marginTop: '1rem', marginBottom: '1.5rem'}">{{p}}</p>
       </div>
       <b-button class="c-button" :disabled="disabledComments" :pressed="clicked" v-if="posts[$route.params.id - 1].comments.length > 0" size="" variant="success" v-on:click="loadComments">
         <icon v-show="clicked" name="spinner" spin /> {{ buttonText }}
@@ -155,8 +155,8 @@ export default {
 }
 
 .ppost > p:not(:first) {
-  margin-top: 1rem !important;
-  margin-bottom: 1.5rem !important;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .post h2 {
