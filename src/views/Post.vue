@@ -154,14 +154,19 @@ export default {
   flex-flow: column nowrap;
 }
 
+.ppost > p:not(:first) {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
 .post h2 {
-  margin-bottom: 2.5rem !important;
+  margin-bottom: 2.5rem;
   font-size: 2rem;
 }
 
 .post h5 {
-  margin-top: 1rem !important;
-  margin-bottom: 1.5rem !important;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   color: #a1a1a1;
   font-size: 1.5rem;
 }
