@@ -24,6 +24,7 @@ export default {
   display: inline-flex;
   margin-bottom: 1.5rem;
   font-weight: 300;
+  font-size: 2rem;
 }
 #right {
   /* overflow: hidden;
